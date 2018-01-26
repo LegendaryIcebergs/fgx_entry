@@ -3,6 +3,7 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+fgx_transmission_entry/ProjectSettings/ProjectVersion.txt
 Assets/AssetStoreTools*
 .idea
 fgx_transmission_entry/Assets/Plugins/Editor/JetBrains*
