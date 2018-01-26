@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 .idea
+fgx_transmission_entry/Assets/Plugins/Editor/JetBrains*
 # Visual Studio 2015 cache directory
 /.vs/
 
