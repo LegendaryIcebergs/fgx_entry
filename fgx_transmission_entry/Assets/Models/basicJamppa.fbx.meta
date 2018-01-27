@@ -97,6 +97,7 @@ ModelImporter:
     4300000: pelaaja
     7400000: Armature|walkUpdate
     7400002: Armature|kameraLookidle
+    7400004: Armature|swingDown
     9500000: //RootNode
     13700000: pelaaja
   externalObjects: {}
