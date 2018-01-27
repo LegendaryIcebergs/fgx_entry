@@ -31,7 +31,7 @@ public class camera_rotate : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !_isRotating)
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow) && !_isRotating)
         {
             turnLeft();
         }
@@ -42,7 +42,7 @@ public class camera_rotate : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.UpArrow) && !_isRotating)
         {
             turnCenter();
-        }
+        }*/
     }
 
     IEnumerator RotateObject(Quaternion start, Quaternion end, float duration)
@@ -60,7 +60,7 @@ public class camera_rotate : MonoBehaviour {
         _isRotating = false;
     }
 
-    private void turnLeft()
+    public void turnLeft()
     {
         if(this.transform.rotation != rotationLeft) { 
         StartCoroutine(RotateObject(
@@ -71,7 +71,7 @@ public class camera_rotate : MonoBehaviour {
         }
     }
 
-    private void turnCenter()
+    public void turnCenter()
     {
         if (this.transform.rotation != cameraRotation)
         {
@@ -83,7 +83,7 @@ public class camera_rotate : MonoBehaviour {
         }
     }
 
-    private void turnRight()
+    public void turnRight()
     {
         if (this.transform.rotation != rotationRight)
         {
