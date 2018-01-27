@@ -25,47 +25,24 @@ public class camera_rotate : MonoBehaviour {
     {
         RotationSpeed = RotationDuration / RotationFromCenter;
         cameraRotation = this.transform.rotation;
-        rotationRight = rotationRight;
-        rotationLeft = rotationLeft;
+        rotationRight = cameraRotation * Quaternion.Euler(0, RotationFromCenter, 0);
+        rotationLeft = cameraRotation * Quaternion.Euler(0, -RotationFromCenter, 0);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !_isRotating)
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow) && !_isRotating)
         {
             turnLeft();
-            /*
-            //Debug.Log(Quaternion.Angle(cameraTransform.transform.rotation, transform.rotation));
-            Debug.Log(transform.rotation);
-            Debug.Log(cameraRotation);
-            StartCoroutine(RotateObject(
-                transform.rotation,
-                transform.rotation * Quaternion.Euler(0, RotationFromCenter, 0),
-                RotationSpeed * Mathf.Abs(transform.rotation.eulerAngles.y - cameraRotation.eulerAngles.y)
-            ));*/
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && !_isRotating)
         {
             turnRight();
-            /*
-            StartCoroutine(RotateObject(
-                transform.rotation,
-                transform.rotation * Quaternion.Euler(0, -RotationFromCenter, 0),
-                RotationDuration
-            ));
-            */
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && !_isRotating)
         {
             turnCenter();
-            /*
-            StartCoroutine(RotateObject(
-                transform.rotation,
-                transform.rotation * Quaternion.Euler(0, -RotationFromCenter, 0),
-                RotationDuration
-            ));
-            */
-        }
+        }*/
     }
 
     IEnumerator RotateObject(Quaternion start, Quaternion end, float duration)
@@ -83,7 +60,7 @@ public class camera_rotate : MonoBehaviour {
         _isRotating = false;
     }
 
-    private void turnLeft()
+    public void turnLeft()
     {
         if(this.transform.rotation != rotationLeft) { 
         StartCoroutine(RotateObject(
@@ -94,7 +71,7 @@ public class camera_rotate : MonoBehaviour {
         }
     }
 
-    private void turnCenter()
+    public void turnCenter()
     {
         if (this.transform.rotation != cameraRotation)
         {
@@ -106,7 +83,7 @@ public class camera_rotate : MonoBehaviour {
         }
     }
 
-    private void turnRight()
+    public void turnRight()
     {
         if (this.transform.rotation != rotationRight)
         {
