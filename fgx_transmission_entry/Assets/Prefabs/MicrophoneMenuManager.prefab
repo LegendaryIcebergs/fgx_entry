@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 224458100850736918}
   - component: {fileID: 114433760084419850}
   m_Layer: 5
-  m_Name: Test Buttons
+  m_Name: MicrophoneMenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
