@@ -12,6 +12,10 @@ public class button_manager : MonoBehaviour
     public GameObject cameraCenter;
     public GameObject cameraRight;
 
+    public GameObject cameraA;
+    public GameObject cameraB;
+    public GameObject cameraC;
+
     public GameObject tempMainButton2Child1;
     public GameObject tempMainButton2Child2;
     public GameObject tempMainButton2Child3;
@@ -19,6 +23,9 @@ public class button_manager : MonoBehaviour
     public GameObject tempMainButton3Child1;
     public GameObject tempMainButton3Child2;
     public GameObject tempMainButton3Child3;
+
+    [SerializeField]
+    private string targetCamera;
 
     GameObject[] objects;
 
@@ -30,7 +37,12 @@ public class button_manager : MonoBehaviour
         Button mainBtn2 = mainButton2.GetComponent<Button>(); mainBtn2.onClick.AddListener(Main2);
         Button mainBtn3 = mainButton3.GetComponent<Button>(); mainBtn3.onClick.AddListener(Main3);
 
-        //Camerabutton children
+        //Camera selection
+        Button camA = cameraA.GetComponent<Button>(); camA.onClick.AddListener(CameraAClick);
+        Button camB = cameraB.GetComponent<Button>(); camB.onClick.AddListener(CameraBClick);
+        Button camC = cameraC.GetComponent<Button>(); camC.onClick.AddListener(CameraCClick);
+
+        //Cameraselection children
         Button camLeft = cameraLeft.GetComponent<Button>(); camLeft.onClick.AddListener(CameraLeftClick);
         Button camCenter = cameraCenter.GetComponent<Button>(); camCenter.onClick.AddListener(CameraCenterClick);
         Button camRight = cameraRight.GetComponent<Button>(); camRight.onClick.AddListener(CameraRightClick);
@@ -47,6 +59,8 @@ public class button_manager : MonoBehaviour
 
         objects = GameObject.FindGameObjectsWithTag("Camera");
 
+        targetCamera = "Empty";
+
         DisableAllButtons();
     }
 
@@ -58,24 +72,56 @@ public class button_manager : MonoBehaviour
     void CameraClick()
     {
         SetMainControls(false);
-        SetCameraControls(true);
+        SetCameraSelections(true);
     }
+
+    void SetCameraSelections(bool isEnabled)
+    {
+        cameraA.SetActive(isEnabled);
+        cameraB.SetActive(isEnabled);
+        cameraC.SetActive(isEnabled);
+    }
+
+    void CameraAClick()
+    {
+        targetCamera = "Camera-A";
+        SetCameraSelections(false);
+        SetCameraControls(true);
+        Debug.Log("You have clicked the Camera button!");
+    }
+
+    void CameraBClick()
+    {
+        targetCamera = "Camera-B";
+        SetCameraSelections(false);
+        SetCameraControls(true);
+        Debug.Log("You have clicked the Camera button!");
+    }
+
+    void CameraCClick()
+    {
+        targetCamera = "Camera-C";
+        SetCameraSelections(false);
+        SetCameraControls(true);
+        Debug.Log("You have clicked the Camera button!");
+    }
+
     void CameraLeftClick()
     {
         SetCameraControls(false);
-        TurnCamera("Camera-A", 1);
+        TurnCamera(targetCamera, 1);
         Debug.Log("You have clicked the Camera button!");
     }
     void CameraCenterClick()
     {
         SetCameraControls(false);
-        TurnCamera("Camera-A", 2);
+        TurnCamera(targetCamera, 2);
         Debug.Log("You have clicked the Camera button!");
     }
     void CameraRightClick()
     {
         SetCameraControls(false);
-        TurnCamera("Camera-A", 3);
+        TurnCamera(targetCamera, 3);
         Debug.Log("You have clicked the Camera button!");
     }
 
@@ -169,6 +215,7 @@ public class button_manager : MonoBehaviour
     void DisableAllButtons()
     {
         SetMainControls(false);
+        SetCameraSelections(false);
         SetCameraControls(false);
         SetMain2Children(false);
         SetMain3Children(false);

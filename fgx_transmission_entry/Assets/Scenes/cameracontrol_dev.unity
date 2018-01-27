@@ -241,6 +241,11 @@ Prefab:
       propertyPath: m_Name
       value: Camera-A
       objectReference: {fileID: 0}
+    - target: {fileID: 81046878298799342, guid: ad0890ed172c3a848a9eff6097b50306,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad0890ed172c3a848a9eff6097b50306, type: 2}
   m_IsPrefabParent: 0
@@ -602,97 +607,6 @@ Prefab:
     - target: {fileID: 1954333565627802, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
       propertyPath: m_Name
       value: ButtonManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355125573904954, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684345448447412, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485372424831488, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183596451719880, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1712650627904462, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155353504645426, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1588525241841706, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1509323861041054, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859242079321206, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224335808714884198, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224631752851029686, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224110896878780556, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224639068995181024, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224658563868724202, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224219046105099006, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224036382416420138, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224946606321579652, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224131718350160514, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224872821839981200, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224157303097281590, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4dd21f23ef2782a49ae4d4a1cd45ecdd, type: 2}
