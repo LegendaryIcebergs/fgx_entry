@@ -34,6 +34,8 @@ public class EventManager : MonoBehaviour {
 		_failedEvents = new Dictionary<string, int>();
 		_pastEventsList = new List<int>();
 		ScriptedEvents = new Dictionary<int, GameObject>();
+
+        ScriptedEvents.Add(0,GameObject.Find("EventStreetInterviewMaster"));
 	}
 	
 	// Update is called once per frame
@@ -49,8 +51,14 @@ public class EventManager : MonoBehaviour {
 			{
 				FireEvent(0);
 			}
-			FireEvent(_pastEventsList.Last() + 1); //This fires the next event specified in EventIds
-		}
+            try
+            {
+                FireEvent(_pastEventsList.Last() + 1);//This fires the next event specified in EventIds
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+            }
+            }
 	}
 
 	/// <summary>
