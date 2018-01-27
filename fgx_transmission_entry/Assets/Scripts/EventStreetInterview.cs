@@ -11,6 +11,8 @@ public class EventStreetInterview : GenericScriptedEvent, IGenericScriptedEvent
 	private StateIds _stateIds;
 
 	private int currentState;
+
+	private bool _sceneSuccess;
 	// Use this for initialization
 	void Start () {
 		
@@ -52,7 +54,15 @@ public class EventStreetInterview : GenericScriptedEvent, IGenericScriptedEvent
 
 	public override void EnterSceneOne()
 	{
-		base.EnterSceneOne();
+		currentState = (int) StateIds.EventSceneOne;
+		if (_sceneSuccess)
+		{
+			EnterSceneTwo();
+		}
+		else
+		{
+			EnterSceneFailier();
+		}
 	}
 
 	public override void EnterSceneTwo()
