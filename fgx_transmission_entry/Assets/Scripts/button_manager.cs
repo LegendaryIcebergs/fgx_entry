@@ -20,6 +20,8 @@ public class button_manager : MonoBehaviour
     public GameObject tempMainButton3Child2;
     public GameObject tempMainButton3Child3;
 
+    GameObject[] objects;
+
 
     void Start()
     {
@@ -43,6 +45,8 @@ public class button_manager : MonoBehaviour
         Button main3Child2 = tempMainButton3Child2.GetComponent<Button>(); main3Child2.onClick.AddListener(m3c2Click);
         Button main3Child3 = tempMainButton3Child3.GetComponent<Button>(); main3Child3.onClick.AddListener(m3c3Click);
 
+        objects = GameObject.FindGameObjectsWithTag("Camera");
+
         DisableAllButtons();
     }
 
@@ -59,17 +63,38 @@ public class button_manager : MonoBehaviour
     void CameraLeftClick()
     {
         SetCameraControls(false);
+        TurnCamera("Camera-A", 1);
         Debug.Log("You have clicked the Camera button!");
     }
     void CameraCenterClick()
     {
         SetCameraControls(false);
+        TurnCamera("Camera-A", 2);
         Debug.Log("You have clicked the Camera button!");
     }
     void CameraRightClick()
     {
         SetCameraControls(false);
+        TurnCamera("Camera-A", 3);
         Debug.Log("You have clicked the Camera button!");
+    }
+
+    /// <summary>
+    /// Turns the target camera in the designated position
+    /// </summary>
+    /// <param name="targetName"></param>
+    /// <param name="position">1:left, 2:center, 3:right</param>
+    void TurnCamera(string targetName, int position)
+    {
+        foreach (GameObject obj in objects)
+        {
+            if (obj.name.Equals(targetName))
+            {
+                if (position == 1) obj.GetComponent<camera_rotate>().turnLeft();
+                else if (position == 2) obj.GetComponent<camera_rotate>().turnCenter();
+                else if (position == 3) obj.GetComponent<camera_rotate>().turnRight();
+            };
+        }
     }
 
     void Main2()
