@@ -23,7 +23,7 @@ public class MouseControl : MonoBehaviour
 		if (Physics.Raycast(_ray, out _hit, 100))
 		{
 			GameObject targetGameObject = _hit.collider.gameObject;
-			if (targetGameObject.CompareTag("interactable"))
+			if (targetGameObject.CompareTag("Interactable"))
 			{
 			//Debug.DrawLine(ray.origin, hit.point);
 			//Debug.Log("Ray hit " + targetGameObject.name);
