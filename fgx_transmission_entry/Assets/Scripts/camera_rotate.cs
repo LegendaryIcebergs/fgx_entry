@@ -25,8 +25,8 @@ public class camera_rotate : MonoBehaviour {
     {
         RotationSpeed = RotationDuration / RotationFromCenter;
         cameraRotation = this.transform.rotation;
-        rotationRight = rotationRight;
-        rotationLeft = rotationLeft;
+        rotationRight = cameraRotation * Quaternion.Euler(0, RotationFromCenter, 0);
+        rotationLeft = cameraRotation * Quaternion.Euler(0, -RotationFromCenter, 0);
     }
 
     void Update()
@@ -34,37 +34,14 @@ public class camera_rotate : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftArrow) && !_isRotating)
         {
             turnLeft();
-            /*
-            //Debug.Log(Quaternion.Angle(cameraTransform.transform.rotation, transform.rotation));
-            Debug.Log(transform.rotation);
-            Debug.Log(cameraRotation);
-            StartCoroutine(RotateObject(
-                transform.rotation,
-                transform.rotation * Quaternion.Euler(0, RotationFromCenter, 0),
-                RotationSpeed * Mathf.Abs(transform.rotation.eulerAngles.y - cameraRotation.eulerAngles.y)
-            ));*/
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && !_isRotating)
         {
             turnRight();
-            /*
-            StartCoroutine(RotateObject(
-                transform.rotation,
-                transform.rotation * Quaternion.Euler(0, -RotationFromCenter, 0),
-                RotationDuration
-            ));
-            */
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && !_isRotating)
         {
             turnCenter();
-            /*
-            StartCoroutine(RotateObject(
-                transform.rotation,
-                transform.rotation * Quaternion.Euler(0, -RotationFromCenter, 0),
-                RotationDuration
-            ));
-            */
         }
     }
 
