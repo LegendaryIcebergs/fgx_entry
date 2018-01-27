@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour {
+public class ButtonScriptEvent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
