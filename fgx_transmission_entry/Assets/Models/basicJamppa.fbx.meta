@@ -94,9 +94,13 @@ ModelImporter:
     400084: toesControl.R
     400086: toesControl.R_end
     2100000: Material
+    2100002: Material.001
+    2100004: Material.002
     4300000: pelaaja
     7400000: Armature|walkUpdate
     7400002: Armature|kameraLookidle
+    7400004: Armature|swingDown
+    7400006: Armature|getUp
     9500000: //RootNode
     13700000: pelaaja
   externalObjects: {}
