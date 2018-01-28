@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4737945586707724}
   - component: {fileID: 114947506050380628}
   - component: {fileID: 114054590403588012}
+  - component: {fileID: 114930904525933166}
   m_Layer: 0
   m_Name: MasterObject
   m_TagString: Untagged
@@ -52,6 +53,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424334aa0ea8a4f7c994a5bedd087f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114930904525933166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203395544169788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d67c52391cbd48e5a55cd0f4aa7a517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunEvents: 1
+  EventIds:
+  - StreetInterview
 --- !u!114 &114947506050380628
 MonoBehaviour:
   m_ObjectHideFlags: 1
