@@ -10,7 +10,7 @@ public class GenericScriptedEvent : MonoBehaviour
 	/// Enums of possible states, values are of int type and go from 0 - 4.
 	/// You can override this one if you need more than 5 states
 	/// </summary>
-	private enum StateIds
+	protected enum StateIds
 	{
 		EventStart,
 		EventSceneOne,
@@ -19,19 +19,15 @@ public class GenericScriptedEvent : MonoBehaviour
 		EventFail
 	}
 
-	private bool _sceneSuccess;
 	
-	private int currentState;
 
-	private EventManager _manager;
-
-	private int _eventId;
+	protected EventManager Manager;
 	
 	public String EventName;
 
 	private void Awake()
 	{
-		_manager = GameObject.Find("MasterObject").GetComponent<EventManager>();
+		Manager = GameObject.Find("MasterObject").GetComponent<EventManager>();
 	}
 
 	/*public virtual void StartEvent()
@@ -42,6 +38,7 @@ public class GenericScriptedEvent : MonoBehaviour
 
 	public virtual void EnterSceneOne()
 	{
+		/*
 		currentState = (int) StateIds.EventSceneOne;
 		if (_sceneSuccess)
 		{
@@ -50,12 +47,12 @@ public class GenericScriptedEvent : MonoBehaviour
 		else
 		{
 			EnterSceneFailier();
-		}
+		}*/
 	}
 
 	public virtual void EnterSceneTwo()
 	{
-		currentState = (int) StateIds.EventSceneTwo;
+		/*currentState = (int) StateIds.EventSceneTwo;
 		if (_sceneSuccess)
 		{
 			EnterSceneSuccess();
@@ -63,19 +60,17 @@ public class GenericScriptedEvent : MonoBehaviour
 		else
 		{
 			EnterSceneFailier();
-		}
+		}*/
 	}
 
 	public virtual void EnterSceneSuccess()
 	{
-		currentState = (int) StateIds.EventSuccess;
-		_manager.NotifyEventSuccess(_eventId);
+		throw new NotImplementedException();
 	}
 
 	public virtual void EnterSceneFailier()
 	{
-		currentState = (int) StateIds.EventFail;
-		_manager.NotifyEventFailier(_eventId);
+		throw new NotImplementedException();
 	}
 }
 

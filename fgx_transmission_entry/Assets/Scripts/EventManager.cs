@@ -6,15 +6,6 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour {
 
-	/// <summary>
-	/// These are set in Unity Editor.
-	/// Right now events are executed in order they are specified here.
-	/// </summary>
-	public enum EventIds
-	{
-		StreetInterview
-	}
-
 	public Dictionary<int, GameObject> ScriptedEvents;
 
 	private Dictionary<String, int> _finishedEvents;
@@ -27,6 +18,12 @@ public class EventManager : MonoBehaviour {
 	private bool _isEventInProgress;
 
 	public bool RunEvents = true;
+
+	/// <summary>
+	/// These are set in Unity Editor.
+	/// Right now events are executed in order they are specified here.
+	/// </summary>
+	public string[] EventIds;
 	
 	// Use this for initialization
 	void Start () {
@@ -34,6 +31,12 @@ public class EventManager : MonoBehaviour {
 		_failedEvents = new Dictionary<string, int>();
 		_pastEventsList = new List<int>();
 		ScriptedEvents = new Dictionary<int, GameObject>();
+		//TODO: Loop EventIds to ScriptedEvents
+		for (int i = 0; i < EventIds.Length; i++)
+		{
+			//EventIds[i] ex. StreetInterview 
+			ScriptedEvents.Add(i, GameObject.Find(String.Format("Event{0}Master", EventIds[i])));
+		}
 	}
 	
 	// Update is called once per frame
@@ -45,11 +48,10 @@ public class EventManager : MonoBehaviour {
 	{
 		if (!_isEventInProgress && RunEvents )
 		{
-			if (_pastEventsList.Count == 0)
+			for (int i = 0; i < ScriptedEvents.Count; i++)
 			{
-				FireEvent(0);
+				FireEvent(i);
 			}
-			FireEvent(_pastEventsList.Last() + 1); //This fires the next event specified in EventIds
 		}
 	}
 
@@ -59,8 +61,7 @@ public class EventManager : MonoBehaviour {
 	/// <param name="eventId">Event's ID</param>
 	public void NotifyEventFailier(int eventId)
 	{
-		EventIds eid = (EventIds) eventId;
-		_failedEvents.Add(eid.ToString(), eventId);
+		_failedEvents.Add(EventIds[eventId], eventId);
 		_pastEventsList.Add(eventId);
 		_isEventInProgress = false;
 
@@ -71,8 +72,7 @@ public class EventManager : MonoBehaviour {
 	/// <param name="eventId"></param>
 	public void NotifyEventSuccess(int eventId)
 	{
-		EventIds eid = (EventIds) eventId;
-		_finishedEvents.Add(eid.ToString(), eventId);
+		_finishedEvents.Add(EventIds[eventId], eventId);
 		_pastEventsList.Add(eventId);
 		_isEventInProgress = false;
 	}

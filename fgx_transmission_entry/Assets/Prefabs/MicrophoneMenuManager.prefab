@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 114976708910011322}
   - component: {fileID: 114180872772210948}
   m_Layer: 5
-  m_Name: Btn 2 (Main 2)
+  m_Name: Btn 2 (Change display cam)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 114580037315565256}
   - component: {fileID: 114606887538053324}
   m_Layer: 5
-  m_Name: Btn 1 (Camera)
+  m_Name: Btn 1 (Rotate cam)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (M2 Child 2)
+  m_Text: Camera B
 --- !u!114 &114047160370529928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -671,7 +671,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Camera
+  m_Text: Rotate camera
 --- !u!114 &114060078655003030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -939,7 +939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main 2
+  m_Text: Change camera
 --- !u!114 &114180872772210948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (M2 Child 1)
+  m_Text: Camera A
 --- !u!114 &114339291129283676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1327,7 +1327,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (M2 Child 3)
+  m_Text: Camera C
 --- !u!114 &114433760084419850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1339,8 +1339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bee3ca6f033d74a936c143053ef04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraButton: {fileID: 1990694849685346}
-  mainButton2: {fileID: 1199802137242714}
+  cameraRotateButton: {fileID: 1990694849685346}
+  cameraSelectionButton: {fileID: 1199802137242714}
   mainButton3: {fileID: 1459737367991114}
   cameraLeft: {fileID: 1290653435803998}
   cameraCenter: {fileID: 1582555869664368}
@@ -1348,13 +1348,18 @@ MonoBehaviour:
   cameraA: {fileID: 1588525241841706}
   cameraB: {fileID: 1155353504645426}
   cameraC: {fileID: 1684345448447412}
-  tempMainButton2Child1: {fileID: 1859242079321206}
-  tempMainButton2Child2: {fileID: 1355125573904954}
-  tempMainButton2Child3: {fileID: 1509323861041054}
+  displayCameraAButton: {fileID: 1859242079321206}
+  displayCameraBButton: {fileID: 1355125573904954}
+  displayCameraCButton: {fileID: 1509323861041054}
   tempMainButton3Child1: {fileID: 1183596451719880}
   tempMainButton3Child2: {fileID: 1712650627904462}
   tempMainButton3Child3: {fileID: 1485372424831488}
   targetCamera: 
+  displayCamera: 0
+  displayCameraPanel: {fileID: 0}
+  displayCameraMatA: {fileID: 2100000, guid: e1cfd9764297ed0489d244986c6c6e25, type: 2}
+  displayCameraMatB: {fileID: 2100000, guid: 1ee1128eaacde4e41900e93b2722c50a, type: 2}
+  displayCameraMatC: {fileID: 2100000, guid: 87c543b2695e5c048939629dc0ac22d7, type: 2}
 --- !u!114 &114439367624541906
 MonoBehaviour:
   m_ObjectHideFlags: 1
