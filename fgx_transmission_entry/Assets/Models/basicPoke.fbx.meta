@@ -99,7 +99,12 @@ ModelImporter:
     7400002: policeSkeleton|punchUp
     9500000: //RootNode
     13700000: police
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pokeTexture
+    second: {fileID: 2100000, guid: 838c9c7d7343e9f48b290e27062eebff, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
