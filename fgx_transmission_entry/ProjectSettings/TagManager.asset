@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Camera
+  - ConsoleDisplay
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bad Press
+  - Camera Beam
   - 
   - 
   - 
